@@ -60,3 +60,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Slimのジェネレータを提供
+gem "slim-rails"
+
+# ERB形式のファイルをslim形式に変換
+gem "html2slim"
+
+gem "bootstrap"
