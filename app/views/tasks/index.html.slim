@@ -15,6 +15,7 @@ table.table.table-hover
     - @tasks.each do |task|
       tr
         td 
+          / task部分は当然task_path(task)でもOK
           = link_to task.name, task
         td 
           = task.created_at
