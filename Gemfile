@@ -71,3 +71,6 @@ gem "bootstrap"
 
 #User ActiveModel has_secure_password
 gem "bcrypt", "~> 3.1.7"
+
+# 文章に含まれるURLを自動でリンクにしてくれる
+gem "rails_autolink"
