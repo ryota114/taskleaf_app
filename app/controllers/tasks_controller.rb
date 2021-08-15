@@ -3,7 +3,9 @@ class TasksController < ApplicationController
   
   def index
     # @tasks = Task.where(user_id: current_user.id)と同じ
-    @tasks = current_user.tasks.order(created_at: :desc)
+    # @tasks = current_user.tasks.order(created_at: :desc)
+    @q = current_user.tasks.ransack(params[:q])
+    @tasks = @q.result(distinct: true).recent
   end
 
   def show

@@ -10,6 +10,16 @@ class Task < ApplicationRecord
   
   scope :recent, -> { order(created_at: :desc) }
   
+  # ransackの検索条件を絞る(カラム)
+  def self.ransackable_attributes(auth_object = nil)
+    %w[name created_at]
+  end 
+  
+  # ransackの検索条件を絞る(関連)
+  def self.ransackable_associations(auth_object = nil)
+    []
+  end 
+  
   private
   
   #def set_nameless_name
