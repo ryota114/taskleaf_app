@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
   # before_validation :set_nameless_name
   
+  has_one_attached :image
   belongs_to :user
   
   validates :name, presence: true
