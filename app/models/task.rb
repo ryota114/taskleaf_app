@@ -21,6 +21,21 @@ class Task < ApplicationRecord
     []
   end 
   
+  # タスクをCSV出力する、どの属性をどの順番で出力するかcsv_attrubutesというメソッドで取得
+  def self.csv_attributes
+    ["name", "description", "created_at", "updated_at"]
+  end 
+  
+  # タスクをCSV出力する、生成
+  def self.generate_csv
+    CSV.generate(headers: true) do |csv|
+      csv << csv_attributes
+      all.each do |task|
+        csv << csv_attributes.map{|attr| task.send(attr)}
+      end 
+    end 
+  end 
+  
   private
   
   #def set_nameless_name
