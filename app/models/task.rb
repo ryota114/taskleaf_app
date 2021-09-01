@@ -36,6 +36,15 @@ class Task < ApplicationRecord
     end 
   end 
   
+  # タスクをCSV入力する
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      task = new
+      task.attributes = row.to_hash.slice(*csv_attributes)
+      task.save!
+    end 
+  end 
+  
   private
   
   #def set_nameless_name
