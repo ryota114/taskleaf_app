@@ -5,7 +5,7 @@ class TasksController < ApplicationController
     # @tasks = Task.where(user_id: current_user.id)と同じ
     # @tasks = current_user.tasks.order(created_at: :desc)
     @q = current_user.tasks.ransack(params[:q])
-    @tasks = @q.result(distinct: true)
+    @tasks = @q.result(distinct: true).page(params[:page]).per(50)
     
     # csv　異なるフォーマットでの出力機能
     respond_to do |format|
