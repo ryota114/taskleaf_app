@@ -83,3 +83,6 @@ gem "ransack"
 
 # ページネーション
 gem "kaminari"
+
+#非同期処理ツール
+gem "sidekiq"
