@@ -72,7 +72,7 @@ gem "html2slim"
 
 gem "bootstrap"
 
-#User ActiveModel has_secure_password
+# User ActiveModel has_secure_password
 gem "bcrypt", "~> 3.1.7"
 
 # 文章に含まれるURLを自動でリンクにしてくれる
@@ -84,5 +84,8 @@ gem "ransack"
 # ページネーション
 gem "kaminari"
 
-#非同期処理ツール
+# 非同期処理ツール
 gem "sidekiq"
+
+# Javascript管理ツール
+gem "webpacker"
